@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { getServerSession } from "next-auth";
+import Header from "@/components/layout/header";
+import Sidebar from "@/components/layout/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +26,11 @@ export default async function RootLayout({
       <body className={`${inter.className} overflow-hidden`}>
         <Providers session={session}>
           <Toaster />
-          {children}
+          <Header />
+          <div className="flex h-screen overflow-hidden">
+            <Sidebar />
+            <main className="w-full pt-16">{children}</main>
+          </div>
         </Providers>
       </body>
     </html>

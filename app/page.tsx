@@ -13,9 +13,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import { Filter, SlidersHorizontal } from "lucide-react";
 import { CardVertical } from "./components/CardVertical";
 import { CardHorizontal } from "./components/CardHorizontal";
-import { Filter, SlidersHorizontal } from "lucide-react";
 
 export default function page() {
   return (
