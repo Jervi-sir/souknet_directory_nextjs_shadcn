@@ -14,3 +14,14 @@ export default function page() {
     </ScrollArea>
   );
 }
+
+/*
+<ProductForm
+  categories={[
+    { _id: "shirts", name: "shirts" },
+    { _id: "pants", name: "pants" },
+  ]}
+  initialData={null}
+  key={null}
+/>
+*/

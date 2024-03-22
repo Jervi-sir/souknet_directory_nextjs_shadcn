@@ -14,16 +14,18 @@ interface DashboardNavProps {
 }
 
 export function DashboardNav({ items, setOpen }: DashboardNavProps) {
-  const path = usePathname();
+  const path = usePathname() || '';
 
   if (!items?.length) {
     return null;
   }
-
   return (
     <nav className="grid items-start gap-2">
       {items.map((item, index) => {
         const Icon = Icons[item.icon || "arrowRight"];
+        const isActive = item.href === '/'
+          ? path === item.href
+          : item.href && path.startsWith(item.href);
         return (
           item.href && (
             <Link
@@ -36,7 +38,7 @@ export function DashboardNav({ items, setOpen }: DashboardNavProps) {
               <span
                 className={cn(
                   "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-black hover:text-white",
-                  path === item.href ? "bg-black text-white" : "transparent",
+                  isActive ? "bg-black text-white" : "transparent",
                   item.disabled && "cursor-not-allowed opacity-80",
                 )}
               >
