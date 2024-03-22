@@ -25,7 +25,7 @@ export const TimelineCard = () => {
           <ol className="border-s-2 border-primary dark:border-primary-500">
             {
               data.map((e, index) => (
-              <li>
+              <li key={index}>
                 <div className="flex-start flex items-center">
                   <div
                     className="-ms-[9px] -mt-2 me-3 flex h-4 w-4 items-center justify-center rounded-full bg-primary dark:bg-primary-500"></div>
